@@ -20,11 +20,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             CoursesComponent = (function () {
                 function CoursesComponent() {
+                    this.title = "The title of this course";
+                    this.courses = ["course1", "course2", "course3",];
                 }
                 CoursesComponent = __decorate([
                     core_1.Component({
                         selector: 'courses',
-                        template: '<h2>Courses</h2>'
+                        template: "<h2>{{title}}</h2>\n    <ul>\n        <li *ngFor=\"#course of courses\">\n            {{course}}\n        </li>\n    </ul>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], CoursesComponent);
@@ -34,4 +36,4 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=courses.component.js.map
+//# sourceMappingURL=courses.Component.js.map
