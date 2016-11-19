@@ -9,7 +9,7 @@ System.register([], function(exports_1, context_1) {
                 function CoursesService() {
                 }
                 CoursesService.prototype.getCourses = function () {
-                    return ["course1", "course2", "course3",];
+                    return ["course1", "course2", "course3"];
                 };
                 return CoursesService;
             }());
