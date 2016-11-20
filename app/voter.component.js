@@ -11,52 +11,47 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var LikeComponent;
+    var VoterComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            LikeComponent = (function () {
-                function LikeComponent() {
-                    this.isLike = false;
-                    this.count = 10;
+            VoterComponent = (function () {
+                function VoterComponent() {
+                    this.myVote = 0;
+                    this.vouteCount = 0;
                     this.change = new core_1.EventEmitter();
                 }
-                LikeComponent.prototype.onclick = function () {
-                    this.isLike = !this.isLike;
-                    if (this.isLike) {
-                        this.count++;
-                    }
-                    else {
-                        this.count--;
-                    }
-                    this.change.emit({ isLike: this.isLike, count: this.count });
+                VoterComponent.prototype.onClick = function ($event, dir) {
+                    this.myVote = dir === 'up' ? 1 : -1;
+                    this.vouteCount += this.myVote;
+                    this.change.emit({ myVote: this.myVote, vouteCount: this.vouteCount });
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
-                ], LikeComponent.prototype, "isLike", void 0);
+                ], VoterComponent.prototype, "myVote", void 0);
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
-                ], LikeComponent.prototype, "count", void 0);
+                ], VoterComponent.prototype, "vouteCount", void 0);
                 __decorate([
                     core_1.Output(), 
                     __metadata('design:type', Object)
-                ], LikeComponent.prototype, "change", void 0);
-                LikeComponent = __decorate([
+                ], VoterComponent.prototype, "change", void 0);
+                VoterComponent = __decorate([
                     core_1.Component({
-                        selector: 'like',
-                        templateUrl: 'app/like.template.html',
-                        styles: ["\n        .glyphicon-heart{\n            color: #ccc;\n        }\n\n         i:hover {\n            cursor: pointer\n        }        \n    "]
+                        selector: 'voter',
+                        templateUrl: 'app/voter.template.html',
+                        styles: ["\n        .glyphicon-menu-up{\n            color: #ccc;\n        }\n        .glyphicon-menu-down{\n            color: #ccc;\n        }\n\n         i:hover {\n            cursor: pointer\n        }        \n    "]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], LikeComponent);
-                return LikeComponent;
+                ], VoterComponent);
+                return VoterComponent;
             }());
-            exports_1("LikeComponent", LikeComponent);
+            exports_1("VoterComponent", VoterComponent);
         }
     }
 });

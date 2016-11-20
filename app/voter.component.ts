@@ -1,10 +1,13 @@
 import { Component, Input, EventEmitter, Output } from 'angular2/core';
 
 @Component({
-    selector: 'like',
-    templateUrl: 'app/like.template.html',
+    selector: 'voter',
+    templateUrl: 'app/voter.template.html',
     styles: [`
-        .glyphicon-heart{
+        .glyphicon-menu-up{
+            color: #ccc;
+        }
+        .glyphicon-menu-down{
             color: #ccc;
         }
 
@@ -13,23 +16,20 @@ import { Component, Input, EventEmitter, Output } from 'angular2/core';
         }        
     `]
 })
-export class LikeComponent {
+export class VoterComponent {
     constructor() { }
 
-
-    @Input() isLike = false;
-    @Input() count = 10;
+    @Input() myVote = 0;
+    @Input() vouteCount = 0;
 
     @Output() change = new EventEmitter();
 
-    onclick() {
-        this.isLike = !this.isLike;
-        if (this.isLike) {
-            this.count++;
-        }
-        else {
-            this.count--;
-        }
-        this.change.emit({ isLike: this.isLike, count: this.count });
+    onClick($event, dir) {
+        
+        this.myVote = dir ==='up' ? 1 : -1;
+        
+        
+        this.vouteCount += this.myVote;
+        this.change.emit({ myVote: this.myVote, vouteCount: this.vouteCount });
     }
 }
