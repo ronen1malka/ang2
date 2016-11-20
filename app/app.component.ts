@@ -5,7 +5,7 @@ import { AuthorComponent } from './authors.Component';
     selector: 'my-app',
     template: 
         `<div id="app_body">
-            <h1>My First Angular 2 App</h1>
+            <h1>The App!</h1>
             <courses></courses>
             <authors></authors>
         </div>`,
