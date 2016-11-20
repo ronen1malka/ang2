@@ -19,14 +19,33 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             VoterComponent = (function () {
-                function VoterComponent() {
+                function VoterComponent(el, renderer) {
+                    this.el = el;
+                    this.renderer = renderer;
+                    this._enableUp = true;
+                    this._enableDown = true;
                     this.myVote = 0;
                     this.vouteCount = 0;
                     this.change = new core_1.EventEmitter();
                 }
                 VoterComponent.prototype.onClick = function ($event, dir) {
-                    this.myVote = dir === 'up' ? 1 : -1;
-                    this.vouteCount += this.myVote;
+                    if (dir === "up" && this._enableUp) {
+                        this.myVote = 1;
+                        this._enableUp = false;
+                        this._enableDown = true;
+                        this.vouteCount += this.myVote;
+                    }
+                    if (dir === "down" && this._enableDown) {
+                        this.myVote = -1;
+                        this._enableUp = true;
+                        this._enableDown = false;
+                        this.vouteCount += this.myVote;
+                    }
+                    if (this.myVote === 0) {
+                        this._enableUp = true;
+                        this._enableDown = true;
+                    }
+                    //this.renderer.setElementClass(this.el.nativeElement,'disabled',true)
                     this.change.emit({ myVote: this.myVote, vouteCount: this.vouteCount });
                 };
                 __decorate([
@@ -47,7 +66,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         templateUrl: 'app/voter.template.html',
                         styles: ["\n        .glyphicon-menu-up{\n            color: #ccc;\n        }\n        .glyphicon-menu-down{\n            color: #ccc;\n        }\n\n         i:hover {\n            cursor: pointer\n        }        \n    "]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], VoterComponent);
                 return VoterComponent;
             }());

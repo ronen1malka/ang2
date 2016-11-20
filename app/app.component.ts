@@ -14,7 +14,7 @@ import { VoterComponent } from './voter.component'
             <authors></authors>
             <favorite (change)="onFavoriteChange($event)"></favorite>
             <like (change)="onLikeChange($event)"></like>
-            <voter (change)="onVoterChange($event)" count=10></voter>
+            <voter (change)="onVoterChange($event)" vouteCount=10></voter>
         </div>`,
     directives: [CoursesComponent, AuthorComponent, FavoriteComponent, LikeComponent, VoterComponent]
 })

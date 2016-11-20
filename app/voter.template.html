@@ -1,7 +1,10 @@
 <div style="width:20px">
-        <i (click)="onClick($event,'up')" class="glyphicon glyphicon-menu-up" 
-                [style.color]="myVote==1 ? 'orange' : '#ccc'"></i>
+        <i (click)="onClick($event,'up')" 
+                class="glyphicon glyphicon-menu-up" 
+                [style.color]="myVote==1 ? 'orange' : '#ccc'"
+                ></i>
         <span>{{vouteCount}}</span>
         <i (click)="onClick($event,'down')" class="glyphicon glyphicon-menu-down" 
-                [style.color]="myVote==1 ? 'orange' : '#ccc'"></i>
+                [style.color]="myVote==-1 ? 'orange' : '#ccc'"
+                ></i>
 </div>

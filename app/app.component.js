@@ -48,7 +48,7 @@ System.register(['angular2/core', './courses.Component', './authors.Component', 
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<div id=\"app_body\">\n            <h1>The App!</h1>\n            <courses></courses>\n            <authors></authors>\n            <favorite (change)=\"onFavoriteChange($event)\"></favorite>\n            <like (change)=\"onLikeChange($event)\"></like>\n            <voter (change)=\"onVoterChange($event)\" count=10></voter>\n        </div>",
+                        template: "<div id=\"app_body\">\n            <h1>The App!</h1>\n            <courses></courses>\n            <authors></authors>\n            <favorite (change)=\"onFavoriteChange($event)\"></favorite>\n            <like (change)=\"onLikeChange($event)\"></like>\n            <voter (change)=\"onVoterChange($event)\" vouteCount=10></voter>\n        </div>",
                         directives: [courses_Component_1.CoursesComponent, authors_Component_1.AuthorComponent, favorite_component_1.FavoriteComponent, like_component_1.LikeComponent, voter_component_1.VoterComponent]
                     }), 
                     __metadata('design:paramtypes', [])

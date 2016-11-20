@@ -1,4 +1,7 @@
 {
-    "typescript.check.workspaceVersion": false,
+    "window.zoomLevel": 1,
+    "typescript.check.tscVersion": false,
+    "editor.fontSize": 18,
+    "editor.mouseWheelZoom": false,
     "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace"
 }
