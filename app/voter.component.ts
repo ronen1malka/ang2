@@ -10,18 +10,20 @@ import { Component, Input, EventEmitter, Output, ElementRef, Renderer  } from 'a
         .glyphicon-menu-down{
             color: #ccc;
         }
-
          i:hover {
             cursor: pointer
         }        
     `]
 })
 export class VoterComponent {
-    constructor(private el: ElementRef, private renderer: Renderer) { }
+    constructor(private el: ElementRef, private renderer: Renderer) { 
+        this.initCount = this.vouteCount;
+    }
     _enableUp = true;
     _enableDown = true;
+    initCount = 0;
     @Input() myVote = 0;
-    @Input() vouteCount = 0;
+    @Input() vouteCount :number = 0;
 
     @Output() change = new EventEmitter();
     onClick($event, dir) {

@@ -24,9 +24,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.renderer = renderer;
                     this._enableUp = true;
                     this._enableDown = true;
+                    this.initCount = 0;
                     this.myVote = 0;
                     this.vouteCount = 0;
                     this.change = new core_1.EventEmitter();
+                    this.initCount = this.vouteCount;
                 }
                 VoterComponent.prototype.onClick = function ($event, dir) {
                     if (dir === "up" && this._enableUp) {
@@ -54,7 +56,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 ], VoterComponent.prototype, "myVote", void 0);
                 __decorate([
                     core_1.Input(), 
-                    __metadata('design:type', Object)
+                    __metadata('design:type', Number)
                 ], VoterComponent.prototype, "vouteCount", void 0);
                 __decorate([
                     core_1.Output(), 
@@ -64,7 +66,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'voter',
                         templateUrl: 'app/voter.template.html',
-                        styles: ["\n        .glyphicon-menu-up{\n            color: #ccc;\n        }\n        .glyphicon-menu-down{\n            color: #ccc;\n        }\n\n         i:hover {\n            cursor: pointer\n        }        \n    "]
+                        styles: ["\n        .glyphicon-menu-up{\n            color: #ccc;\n        }\n        .glyphicon-menu-down{\n            color: #ccc;\n        }\n         i:hover {\n            cursor: pointer\n        }        \n    "]
                     }), 
                     __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
                 ], VoterComponent);
