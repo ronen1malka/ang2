@@ -2,13 +2,16 @@ import { Component } from 'angular2/core';
 import { CoursesComponent } from './courses.Component';
 import { AuthorComponent } from './authors.Component';
 import { FavoriteComponent } from './favorite.component'
-import { LikeComponent } from './like.component'
-import { VoterComponent } from './voter.component'
+import { LikeComponent } from './like.component';
+import { VoterComponent } from './voter.component';
+import { TweetComponent } from './tweet.component';
+
 
 @Component({
     selector: 'my-app',
     template:
     `<div id="app_body">
+            <tweet></tweet>
             <h1>The App!</h1>
             <courses></courses>
             <authors></authors>
@@ -16,7 +19,8 @@ import { VoterComponent } from './voter.component'
             <like (change)="onLikeChange($event)"></like>
             <voter (change)="onVoterChange($event)" vouteCount=10></voter>
         </div>`,
-    directives: [CoursesComponent, AuthorComponent, FavoriteComponent, LikeComponent, VoterComponent]
+    directives: [TweetComponent,CoursesComponent, AuthorComponent,
+                 FavoriteComponent, LikeComponent, VoterComponent]
 })
 export class AppComponent {
 
