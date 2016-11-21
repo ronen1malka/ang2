@@ -9,25 +9,14 @@ import { TweetComponent } from './tweet.component';
 
 @Component({
     selector: 'my-app',
-    template:
-    `<div id="app_body">
-            <tweet></tweet>
-            <h1>The App!</h1>
-            <courses></courses>
-            <authors></authors>
-            <favorite (change)="onFavoriteChange($event)"></favorite>
-            <like (change)="onLikeChange($event)"></like>
-            <voter (change)="onVoterChange($event)" vouteCount=10></voter>
-        </div>`,
-    directives: [TweetComponent,CoursesComponent, AuthorComponent,
-                 FavoriteComponent, LikeComponent, VoterComponent]
+    templateUrl: 'app/app.template.html',
+    directives: [TweetComponent, CoursesComponent, AuthorComponent,
+        FavoriteComponent, LikeComponent, VoterComponent]
 })
 export class AppComponent {
-
     onFavoriteChange($event) {
         console.log($event)
     }
-
     onLikeChange($event) {
         console.log($event)
     }

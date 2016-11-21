@@ -1,13 +1,13 @@
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="" alt="abc">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Media heading</h4>
-    this is the media <body>
-        
-    </body>
+<div *ngFor="#tweet of tweets" class="row" style="padding-top:5px;padding-left:20px">
+  <div class="media">
+    <div class="media-left">
+      <img class="media-object img-rounded" src="{{tweet.image}}" alt="abc">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading" style="display:inline-block">{{tweet.aoutor}}</h4>
+      <span style="color:#ccc">{{tweet.tweeterHandler}}</span>
+      <p>{{tweet.text}}</p>
+      <like count="{{tweet.likeCount}}"></like>
+    </div>
   </div>
 </div>
