@@ -3,5 +3,6 @@
     "typescript.check.tscVersion": false,
     "editor.fontSize": 18,
     "editor.mouseWheelZoom": false,
+     "http.proxyStrictSSL": false,
     "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace"
 }
