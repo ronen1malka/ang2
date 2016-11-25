@@ -47,4 +47,4 @@ System.register(['angular2/core', './course.service', './auto-grow.directive', '
         }
     }
 });
-//# sourceMappingURL=courses.Component.js.map
+//# sourceMappingURL=courses.component.js.map

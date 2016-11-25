@@ -3,6 +3,14 @@
     "typescript.check.tscVersion": false,
     "editor.fontSize": 18,
     "editor.mouseWheelZoom": false,
-     "http.proxyStrictSSL": false,
+    "http.proxyStrictSSL": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/*.js": true,
+        "**/*.js.map": true,
+        "**/.DS_Store": true
+    },
     "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace"
 }
