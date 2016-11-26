@@ -1,19 +1,33 @@
 <form [ngFormModel]="form" (ngSubmit)="signup()">
     <div class="form-group">
         <label for="username">Username</label>
-        <input id="username" type="text" 
-            class="form-control" ngControl="username" #username="ngForm">
+        <input id="username" type="text" class="form-control" ngControl="username" #username="ngForm">
+        <div *ngIf="username.control.pending">Chcking</div>
         <div *ngIf="username.touched && username.errors">
-            <div *ngIf="username.errors.required" 
-                class="alert alert-danger">Username is required.</div>
-            <div *ngIf="username.errors.cannotContainSpace" 
-                class="alert alert-danger">Username cannot contain space.</div>
+            <div *ngIf="username.errors.required" class="alert alert-danger">Username is required.</div>
+            <div *ngIf="username.errors.cannotContainSpace" class="alert alert-danger">Username cannot contain space.</div>
+            <div *ngIf="username.errors.shouldBeUnique" class="alert alert-danger">This Username is already taken.</div>
         </div>
     </div>
+
     <div class="form-group">
-        <label for="password">Password</label>
-        <input id="password" type="text" class="form-control" ngControl="password" #password="ngForm">
-        <div *ngIf="!password.valid" class="alert alert-danger">Password is required</div>
+        <label for="newPassword">New Password</label>
+        <input id="newPassword" type="text" class="form-control" ngControl="newPassword" #newPassword="ngForm">
+        <div *ngIf="newPassword.touched && newPassword.errors">
+            <div *ngIf="newPassword.errors.required" class="alert alert-danger">New Password is required</div>
+            <div *ngIf='newPassword.errors.cannotContainSpace' class='alert alert-danger'>Password cannot contain space</div>
+            <div *ngIf='newPassword.errors.minLength' class='alert alert-danger'>Minimum password length is 5</div>
+        </div>
     </div>
+
+    <div class='form-group'>
+        <label for='retype'>Retype New Password</label>
+        <input id='retype' type='text' class='form-control' ngControl='retype' #retype="ngForm">
+        <div *ngIf='retype.touched && retype.errors'>
+            <div *ngIf='retype.errors.required' class='alert alert-danger'>Retype New Password is required</div>
+            <div *ngIf='retype.errors.comparePasswords' class='alert alert-danger'>Passwords are not the same</div>
+        </div>
+    </div>
+
     <button class="btn btn-primary" type="submit">Sign Up</button>
 </form>

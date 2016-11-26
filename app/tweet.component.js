@@ -24,21 +24,20 @@ System.register(['angular2/core', './tweet.service', './like.component'], functi
                 like_component_1 = like_component_1_1;
             }],
         execute: function() {
-            TweetComponent = (function () {
-                function TweetComponent(tweetService) {
+            let TweetComponent = class TweetComponent {
+                constructor(tweetService) {
                     this.tweets = tweetService.getTweets();
                 }
-                TweetComponent = __decorate([
-                    core_1.Component({
-                        selector: 'tweet',
-                        templateUrl: 'app/tweet.template.html',
-                        providers: [tweet_service_1.TweetService],
-                        directives: [like_component_1.LikeComponent]
-                    }), 
-                    __metadata('design:paramtypes', [tweet_service_1.TweetService])
-                ], TweetComponent);
-                return TweetComponent;
-            }());
+            };
+            TweetComponent = __decorate([
+                core_1.Component({
+                    selector: 'tweet',
+                    templateUrl: 'app/tweet.template.html',
+                    providers: [tweet_service_1.TweetService],
+                    directives: [like_component_1.LikeComponent]
+                }), 
+                __metadata('design:paramtypes', [tweet_service_1.TweetService])
+            ], TweetComponent);
             exports_1("TweetComponent", TweetComponent);
         }
     }

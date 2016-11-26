@@ -12,5 +12,6 @@
         "**/*.js.map": true,
         "**/.DS_Store": true
     },
-    "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "Monaco, Consolas, 'Courier New', monospace",
+    "typescript.check.workspaceVersion": false
 }

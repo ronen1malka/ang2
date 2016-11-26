@@ -1,6 +1,7 @@
 import { Component } from 'angular2/core';
 import { ControlGroup, Control, Validators, FormBuilder } from 'angular2/common';
-import {UsernameValidators} from './usernameValidators';
+import { UsernameValidators } from './usernameValidators';
+import { NewPasswordValidator } from './newPasswordValidator'
 
 @Component({
     selector: 'signup-form',
@@ -12,9 +13,19 @@ export class SignUpFormComponent {
         this.form = fb.group({
             username: ['', Validators.compose([
                 Validators.required,
-                UsernameValidators.cannotContainSpace])],
-            password: ['', Validators.required]
-        })
+                UsernameValidators.cannotContainSpace
+            ]), UsernameValidators.shouldBeUnique],
+
+            newPassword: ['', Validators.compose([
+                Validators.required,
+                NewPasswordValidator.cannotContainSpace,
+                NewPasswordValidator.minLength])],
+
+            retype: ['', Validators.compose([
+                Validators.required])],
+        }, {
+                validator: NewPasswordValidator.comparePasswords
+            })
     };
 
 

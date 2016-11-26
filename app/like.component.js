@@ -18,13 +18,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            LikeComponent = (function () {
-                function LikeComponent() {
+            let LikeComponent = class LikeComponent {
+                constructor() {
                     this.isLike = false;
                     this.count = 10;
                     this.change = new core_1.EventEmitter();
                 }
-                LikeComponent.prototype.onclick = function () {
+                onclick() {
                     this.isLike = !this.isLike;
                     if (this.isLike) {
                         this.count++;
@@ -33,29 +33,36 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                         this.count--;
                     }
                     this.change.emit({ isLike: this.isLike, count: this.count });
-                };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', Object)
-                ], LikeComponent.prototype, "isLike", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', Object)
-                ], LikeComponent.prototype, "count", void 0);
-                __decorate([
-                    core_1.Output(), 
-                    __metadata('design:type', Object)
-                ], LikeComponent.prototype, "change", void 0);
-                LikeComponent = __decorate([
-                    core_1.Component({
-                        selector: 'like',
-                        templateUrl: 'app/like.template.html',
-                        styles: ["\n        .glyphicon-heart{\n            color: #ccc;\n        }\n\n         i:hover {\n            cursor: pointer\n        }        \n    "]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], LikeComponent);
-                return LikeComponent;
-            }());
+                }
+            };
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', Object)
+            ], LikeComponent.prototype, "isLike", void 0);
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', Object)
+            ], LikeComponent.prototype, "count", void 0);
+            __decorate([
+                core_1.Output(), 
+                __metadata('design:type', Object)
+            ], LikeComponent.prototype, "change", void 0);
+            LikeComponent = __decorate([
+                core_1.Component({
+                    selector: 'like',
+                    templateUrl: 'app/like.template.html',
+                    styles: [`
+        .glyphicon-heart{
+            color: #ccc;
+        }
+
+         i:hover {
+            cursor: pointer
+        }        
+    `]
+                }), 
+                __metadata('design:paramtypes', [])
+            ], LikeComponent);
             exports_1("LikeComponent", LikeComponent);
         }
     }

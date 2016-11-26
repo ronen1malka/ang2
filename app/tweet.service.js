@@ -9,13 +9,11 @@ System.register(["./tweet"], function(exports_1, context_1) {
                 tweet_1 = tweet_1_1;
             }],
         execute: function() {
-            TweetService = (function () {
-                function TweetService() {
-                }
-                TweetService.prototype.getTweets = function () {
-                    var tweets = new Array();
-                    for (var i = 0; i <= 10; i++) {
-                        var t = new tweet_1.Tweet();
+            class TweetService {
+                getTweets() {
+                    let tweets = new Array();
+                    for (let i = 0; i <= 10; i++) {
+                        let t = new tweet_1.Tweet();
                         t.aoutor = "aaaa " + i;
                         t.image = "http://lorempixel.com/100/100/people?" + i;
                         t.likeCount = i;
@@ -24,9 +22,8 @@ System.register(["./tweet"], function(exports_1, context_1) {
                         tweets.push(t);
                     }
                     return tweets;
-                };
-                return TweetService;
-            }());
+                }
+            }
             exports_1("TweetService", TweetService);
         }
     }

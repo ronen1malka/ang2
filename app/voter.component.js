@@ -18,8 +18,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            VoterComponent = (function () {
-                function VoterComponent(el, renderer) {
+            let VoterComponent = class VoterComponent {
+                constructor(el, renderer) {
                     this.el = el;
                     this.renderer = renderer;
                     this._enableUp = true;
@@ -30,7 +30,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.change = new core_1.EventEmitter();
                     this.initCount = this.vouteCount;
                 }
-                VoterComponent.prototype.onClick = function ($event, dir) {
+                onClick($event, dir) {
                     if (dir === "up" && this._enableUp) {
                         this.myVote = 1;
                         this._enableUp = false;
@@ -49,29 +49,38 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     }
                     //this.renderer.setElementClass(this.el.nativeElement,'disabled',true)
                     this.change.emit({ myVote: this.myVote, vouteCount: this.vouteCount });
-                };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', Object)
-                ], VoterComponent.prototype, "myVote", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', Number)
-                ], VoterComponent.prototype, "vouteCount", void 0);
-                __decorate([
-                    core_1.Output(), 
-                    __metadata('design:type', Object)
-                ], VoterComponent.prototype, "change", void 0);
-                VoterComponent = __decorate([
-                    core_1.Component({
-                        selector: 'voter',
-                        templateUrl: 'app/voter.template.html',
-                        styles: ["\n        .glyphicon-menu-up{\n            color: #ccc;\n        }\n        .glyphicon-menu-down{\n            color: #ccc;\n        }\n         i:hover {\n            cursor: pointer\n        }        \n    "]
-                    }), 
-                    __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
-                ], VoterComponent);
-                return VoterComponent;
-            }());
+                }
+            };
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', Object)
+            ], VoterComponent.prototype, "myVote", void 0);
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', Number)
+            ], VoterComponent.prototype, "vouteCount", void 0);
+            __decorate([
+                core_1.Output(), 
+                __metadata('design:type', Object)
+            ], VoterComponent.prototype, "change", void 0);
+            VoterComponent = __decorate([
+                core_1.Component({
+                    selector: 'voter',
+                    templateUrl: 'app/voter.template.html',
+                    styles: [`
+        .glyphicon-menu-up{
+            color: #ccc;
+        }
+        .glyphicon-menu-down{
+            color: #ccc;
+        }
+         i:hover {
+            cursor: pointer
+        }        
+    `]
+                }), 
+                __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+            ], VoterComponent);
             exports_1("VoterComponent", VoterComponent);
         }
     }

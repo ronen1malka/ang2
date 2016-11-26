@@ -5,14 +5,11 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            CoursesService = (function () {
-                function CoursesService() {
-                }
-                CoursesService.prototype.getCourses = function () {
+            class CoursesService {
+                getCourses() {
                     return ["course1", "course2", "course3"];
-                };
-                return CoursesService;
-            }());
+                }
+            }
             exports_1("CoursesService", CoursesService);
         }
     }

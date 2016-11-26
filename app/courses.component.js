@@ -27,22 +27,29 @@ System.register(['angular2/core', './course.service', './auto-grow.directive', '
                 favorite_component_1 = favorite_component_1_1;
             }],
         execute: function() {
-            CoursesComponent = (function () {
-                function CoursesComponent(courseService) {
+            let CoursesComponent = class CoursesComponent {
+                constructor(courseService) {
                     this.title = "The title of this course";
                     this.courses = courseService.getCourses();
                 }
-                CoursesComponent = __decorate([
-                    core_1.Component({
-                        selector: 'courses',
-                        template: "<h2>{{title}}</h2>\n    <input type=\"text\" autoGrow />\n    <ul>\n        <li *ngFor=\"#course of courses\">\n            {{course}} <favorite isFavorite=true></favorite>\n        </li>\n        \n    </ul>\n    ",
-                        providers: [course_service_1.CoursesService],
-                        directives: [auto_grow_directive_1.AutoGrowDirective, favorite_component_1.FavoriteComponent]
-                    }), 
-                    __metadata('design:paramtypes', [course_service_1.CoursesService])
-                ], CoursesComponent);
-                return CoursesComponent;
-            }());
+            };
+            CoursesComponent = __decorate([
+                core_1.Component({
+                    selector: 'courses',
+                    template: `<h2>{{title}}</h2>
+    <input type="text" autoGrow />
+    <ul>
+        <li *ngFor="#course of courses">
+            {{course}} <favorite isFavorite=true></favorite>
+        </li>
+        
+    </ul>
+    `,
+                    providers: [course_service_1.CoursesService],
+                    directives: [auto_grow_directive_1.AutoGrowDirective, favorite_component_1.FavoriteComponent]
+                }), 
+                __metadata('design:paramtypes', [course_service_1.CoursesService])
+            ], CoursesComponent);
             exports_1("CoursesComponent", CoursesComponent);
         }
     }

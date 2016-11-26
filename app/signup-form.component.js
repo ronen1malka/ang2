@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common', './usernameValidators'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', './usernameValidators', './newPasswordValidator'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators'], fu
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1, usernameValidators_1;
+    var core_1, common_1, usernameValidators_1, newPasswordValidator_1;
     var SignUpFormComponent;
     return {
         setters:[
@@ -22,30 +22,40 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators'], fu
             },
             function (usernameValidators_1_1) {
                 usernameValidators_1 = usernameValidators_1_1;
+            },
+            function (newPasswordValidator_1_1) {
+                newPasswordValidator_1 = newPasswordValidator_1_1;
             }],
         execute: function() {
-            SignUpFormComponent = (function () {
-                function SignUpFormComponent(fb) {
+            let SignUpFormComponent = class SignUpFormComponent {
+                constructor(fb) {
                     this.form = fb.group({
                         username: ['', common_1.Validators.compose([
                                 common_1.Validators.required,
-                                usernameValidators_1.UsernameValidators.cannotContainSpace])],
-                        password: ['', common_1.Validators.required]
+                                usernameValidators_1.UsernameValidators.cannotContainSpace
+                            ]), usernameValidators_1.UsernameValidators.shouldBeUnique],
+                        newPassword: ['', common_1.Validators.compose([
+                                common_1.Validators.required,
+                                newPasswordValidator_1.NewPasswordValidator.cannotContainSpace,
+                                newPasswordValidator_1.NewPasswordValidator.minLength])],
+                        retype: ['', common_1.Validators.compose([
+                                common_1.Validators.required])],
+                    }, {
+                        validator: newPasswordValidator_1.NewPasswordValidator.comparePasswords
                     });
                 }
                 ;
-                SignUpFormComponent.prototype.signup = function () {
+                signup() {
                     console.log(this.form.value);
-                };
-                SignUpFormComponent = __decorate([
-                    core_1.Component({
-                        selector: 'signup-form',
-                        templateUrl: 'app/signup-form.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [common_1.FormBuilder])
-                ], SignUpFormComponent);
-                return SignUpFormComponent;
-            }());
+                }
+            };
+            SignUpFormComponent = __decorate([
+                core_1.Component({
+                    selector: 'signup-form',
+                    templateUrl: 'app/signup-form.component.html'
+                }), 
+                __metadata('design:paramtypes', [common_1.FormBuilder])
+            ], SignUpFormComponent);
             exports_1("SignUpFormComponent", SignUpFormComponent);
         }
     }

@@ -21,21 +21,26 @@ System.register(['angular2/core', './authors.service'], function(exports_1, cont
                 authors_service_1 = authors_service_1_1;
             }],
         execute: function() {
-            AuthorComponent = (function () {
-                function AuthorComponent(authorsService) {
+            let AuthorComponent = class AuthorComponent {
+                constructor(authorsService) {
                     this.title = "Authors";
                     this.authors = authorsService.getAuthors();
                 }
-                AuthorComponent = __decorate([
-                    core_1.Component({
-                        selector: 'authors',
-                        template: "<h2>{{title}}</h2>\n    <ul>\n        <li *ngFor=\"#author of authors\">\n            {{author}}\n        </li>\n    </ul>\n    ",
-                        providers: [authors_service_1.AuthorsService]
-                    }), 
-                    __metadata('design:paramtypes', [authors_service_1.AuthorsService])
-                ], AuthorComponent);
-                return AuthorComponent;
-            }());
+            };
+            AuthorComponent = __decorate([
+                core_1.Component({
+                    selector: 'authors',
+                    template: `<h2>{{title}}</h2>
+    <ul>
+        <li *ngFor="#author of authors">
+            {{author}}
+        </li>
+    </ul>
+    `,
+                    providers: [authors_service_1.AuthorsService]
+                }), 
+                __metadata('design:paramtypes', [authors_service_1.AuthorsService])
+            ], AuthorComponent);
             exports_1("AuthorComponent", AuthorComponent);
         }
     }

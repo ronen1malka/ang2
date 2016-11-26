@@ -5,16 +5,15 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            Tweet = (function () {
-                function Tweet() {
+            class Tweet {
+                constructor() {
                     this.text = "";
                     this.image = "";
                     this.aoutor = "";
                     this.tweeterHandler = "";
                     this.likeCount = 0;
                 }
-                return Tweet;
-            }());
+            }
             exports_1("Tweet", Tweet);
         }
     }
