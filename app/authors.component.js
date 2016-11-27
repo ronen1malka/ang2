@@ -21,7 +21,7 @@ System.register(['angular2/core', './authors.service'], function(exports_1, cont
                 authors_service_1 = authors_service_1_1;
             }],
         execute: function() {
-            let AuthorComponent = class AuthorComponent {
+            AuthorComponent = class AuthorComponent {
                 constructor(authorsService) {
                     this.title = "Authors";
                     this.authors = authorsService.getAuthors();

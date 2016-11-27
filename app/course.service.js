@@ -5,11 +5,11 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            class CoursesService {
+            CoursesService = class CoursesService {
                 getCourses() {
                     return ["course1", "course2", "course3"];
                 }
-            }
+            };
             exports_1("CoursesService", CoursesService);
         }
     }

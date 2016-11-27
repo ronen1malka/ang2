@@ -27,7 +27,7 @@ System.register(['angular2/core', './course.service', './auto-grow.directive', '
                 favorite_component_1 = favorite_component_1_1;
             }],
         execute: function() {
-            let CoursesComponent = class CoursesComponent {
+            CoursesComponent = class CoursesComponent {
                 constructor(courseService) {
                     this.title = "The title of this course";
                     this.courses = courseService.getCourses();

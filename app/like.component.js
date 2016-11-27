@@ -18,7 +18,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            let LikeComponent = class LikeComponent {
+            LikeComponent = class LikeComponent {
                 constructor() {
                     this.isLike = false;
                     this.count = 10;

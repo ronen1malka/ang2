@@ -18,7 +18,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            let VoterComponent = class VoterComponent {
+            VoterComponent = class VoterComponent {
                 constructor(el, renderer) {
                     this.el = el;
                     this.renderer = renderer;

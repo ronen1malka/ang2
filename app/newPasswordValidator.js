@@ -5,7 +5,7 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            class NewPasswordValidator {
+            NewPasswordValidator = class NewPasswordValidator {
                 static cannotContainSpace(control) {
                     if (control.value.indexOf(' ') >= 0)
                         return { cannotContainSpace: true };
@@ -27,7 +27,7 @@ System.register([], function(exports_1, context_1) {
                         return null;
                     }
                 }
-            }
+            };
             exports_1("NewPasswordValidator", NewPasswordValidator);
         }
     }

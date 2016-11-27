@@ -5,7 +5,7 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            class UsernameValidators {
+            UsernameValidators = class UsernameValidators {
                 static shouldBeUnique(control) {
                     return new Promise((resolve, reject) => {
                         setTimeout(function () {
@@ -21,7 +21,7 @@ System.register([], function(exports_1, context_1) {
                         return { cannotContainSpace: true };
                     return null;
                 }
-            }
+            };
             exports_1("UsernameValidators", UsernameValidators);
         }
     }

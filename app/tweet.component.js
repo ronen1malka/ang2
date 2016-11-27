@@ -24,7 +24,7 @@ System.register(['angular2/core', './tweet.service', './like.component'], functi
                 like_component_1 = like_component_1_1;
             }],
         execute: function() {
-            let TweetComponent = class TweetComponent {
+            TweetComponent = class TweetComponent {
                 constructor(tweetService) {
                     this.tweets = tweetService.getTweets();
                 }

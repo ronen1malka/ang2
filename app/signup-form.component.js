@@ -27,7 +27,7 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators', './
                 newPasswordValidator_1 = newPasswordValidator_1_1;
             }],
         execute: function() {
-            let SignUpFormComponent = class SignUpFormComponent {
+            SignUpFormComponent = class SignUpFormComponent {
                 constructor(fb) {
                     this.form = fb.group({
                         username: ['', common_1.Validators.compose([

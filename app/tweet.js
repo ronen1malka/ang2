@@ -5,7 +5,7 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            class Tweet {
+            Tweet = class Tweet {
                 constructor() {
                     this.text = "";
                     this.image = "";
@@ -13,7 +13,7 @@ System.register([], function(exports_1, context_1) {
                     this.tweeterHandler = "";
                     this.likeCount = 0;
                 }
-            }
+            };
             exports_1("Tweet", Tweet);
         }
     }

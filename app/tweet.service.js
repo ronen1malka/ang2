@@ -9,7 +9,7 @@ System.register(["./tweet"], function(exports_1, context_1) {
                 tweet_1 = tweet_1_1;
             }],
         execute: function() {
-            class TweetService {
+            TweetService = class TweetService {
                 getTweets() {
                     let tweets = new Array();
                     for (let i = 0; i <= 10; i++) {
@@ -23,7 +23,7 @@ System.register(["./tweet"], function(exports_1, context_1) {
                     }
                     return tweets;
                 }
-            }
+            };
             exports_1("TweetService", TweetService);
         }
     }

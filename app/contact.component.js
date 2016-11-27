@@ -11,45 +11,26 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var FavoriteComponent;
+    var ContactComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            FavoriteComponent = class FavoriteComponent {
-                constructor() {
-                    this.isFavorite = false;
-                    this.change = new core_1.EventEmitter();
-                }
-                onclick() {
-                    this.isFavorite = !this.isFavorite;
-                    this.change.emit({ newValue: this.isFavorite });
+            ContactComponent = class ContactComponent {
+                onSubmit(form) {
+                    console.log(form);
                 }
             };
-            __decorate([
-                core_1.Input(), 
-                __metadata('design:type', Object)
-            ], FavoriteComponent.prototype, "isFavorite", void 0);
-            __decorate([
-                core_1.Output(), 
-                __metadata('design:type', Object)
-            ], FavoriteComponent.prototype, "change", void 0);
-            FavoriteComponent = __decorate([
+            ContactComponent = __decorate([
                 core_1.Component({
-                    selector: 'favorite',
-                    templateUrl: 'app/favorite.template.html',
-                    styles: [`
-        .glyphicon-star{
-            color: orange;
-        }
-    `]
+                    templateUrl: '/app/contact.component.html'
                 }), 
                 __metadata('design:paramtypes', [])
-            ], FavoriteComponent);
-            exports_1("FavoriteComponent", FavoriteComponent);
+            ], ContactComponent);
+            exports_1("ContactComponent", ContactComponent);
         }
     }
 });
-//# sourceMappingURL=favorite.component.js.map
+//# sourceMappingURL=contact.component.js.map
